@@ -1,0 +1,28 @@
+<h1 [class]="myClass">With [class]</h1>
+<button (click)="cambiarClase()" class="btn btn-default">Cambiar Clase</button>
+<br>
+<h1 [ngClass]="myClass2">With [ngClass]</h1>
+<button class="btn btn-default" (click)="cambiarClase2()">Cambiar Clase</button>
+<br>
+<h1 [ngStyle]="styles">Hello World! [ngStyle]</h1>
+<button class = "btn btn-default" (click)=estilos(0)>Cambiar tipografia</button>
+<button class = "btn btn-default" (click)=estilos(1)>Cambiar color</button>
+<button class = "btn btn-default" (click)=estilos(2)>Cambiar tamaño</button>
+<br><br>
+<button class = "btn btn-default" (click)=condicion()>{{estado}}</button>
+<label *ngIf="ifState"> Sup' Dude!</label>
+<br>
+<h3>*ngFor</h3>
+<select>
+	<option *ngFor="let loop of size">Loop #{{loop.id+1}}</option>
+</select>
+<br><br>
+<h3>[ngSwitch]</h3>
+<input placeholder="Ingresa una letra A-D" #letter (keyup)="onKeyUp($event)">
+<span [ngSwitch]="election">
+<span *ngSwitchCase="'A'">Introduciste la letra A</span>
+<span *ngSwitchCase="'B'">Introduciste la letra B</span>
+<span *ngSwitchCase="'C'">Introduciste la letra C</span>
+<span *ngSwitchCase="'D'">Introduciste la letra D</span>
+<span *ngSwitchDefault></span>
+</span>
